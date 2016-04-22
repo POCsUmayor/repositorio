@@ -1,0 +1,2604 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width" />
+<title>ESTADO PLAN DE INTEGRACIÓN / B2B</title>
+	<script type="text/javascript" src="js/filter.js" ></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/npm.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+        
+		<script type="text/javascript">
+			TableThing = function(params) {
+			settings = {
+				table: $('#entriestable'),
+				thead: $('#thead'),
+				tbody: $('#tbody')
+			
+			};
+
+			this.fixThead = function() {
+				// empty our array to begin with
+				settings.thead = [];
+				
+				// loop over the first row of td's in &lt;tbody> and get the widths of individual &lt;td>'s
+				$('tbody tr:eq(1) td', settings.table).each( function(i,v){
+					settings.thead.push($(v).width());
+										
+				});
+
+				// now loop over our array setting the widths we've got to the &lt;th>'s
+				for(i=0;i<settings.thead.length;i++) {
+					$('thead th:eq('+i+')', settings.table).width(settings.thead[i]);
+					
+					
+				}
+
+				// here we attach to the scroll, adding the class 'fixed' to the &lt;thead> 
+				$(window).scroll(function() {
+					var windowTop = $(window).scrollTop();
+
+					if (windowTop > settings.table.offset().top) {
+						$("thead", settings.table).addClass("fixed");
+						
+						
+					}
+					else {
+						$("thead", settings.table).removeClass("fixed");
+						
+						
+					}
+				});
+			}
+				}
+				$(function(){
+					var table = new TableThing();
+					table.fixThead();
+					$(window).resize(function(){
+						table.fixThead();
+					});
+				});
+				
+		</script>
+			
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.css.map">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css.map">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css.map">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css.map">
+ 	<style>
+
+	body {
+		width:100%;
+		margin:0;
+		font-family:Arial, Helvetica, sans-serif;
+	}
+	
+	
+	
+	
+	.fl{
+		float:left;
+	}
+	
+	.fr{
+		float:right;
+	}
+	
+	a{
+		text-decoration:none;
+		transition: all 0.2s ease-in-out;
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		-ms-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+	}
+
+	ul{
+		list-style:none;
+		padding:0;
+		margin:0;
+	}
+
+	#wrapper {
+		width:100%;
+		border-top: 6px solid #5283d9;
+	}
+	
+	#header{
+		border-bottom: 1px solid #cccccc;
+		display:block;
+		padding:25px;
+		margin:0 auto;
+	}
+	
+	.Logo{
+		float:left;
+	}
+
+	h1.TitleSite{
+		float:right;
+		height:68px;
+		line-height:68px;
+		font-size:25px;
+		color:#5283d9;
+		margin:0px;
+	}
+	
+	#ContentInfo{
+		position:absolute;
+		top:135px;
+		right:0;
+		bottom:0;
+		left:0;	
+	}
+	
+	#ContentMask{
+		width:100%;
+		height:100%;
+		position:absolute;
+		top:0;
+		left:0;
+		overflow:hidden;
+	}
+
+	#mask {
+		width:100%;
+		height:500%;
+		overflow:hidden;
+	}
+
+	.item {
+		width:100%;
+		height:20%;
+		display:block;
+		position:relative;
+		overflow:hidden;
+	}	
+
+	.content {
+		width:860px;
+		height:100%;
+		margin:0 auto;
+		position:relative;
+		text-align:center;
+	}
+
+	h2.Title_Pant{
+		overflow:hidden;
+		font-size:33px;
+		font-weight:bold;
+		text-align:center;
+		color:#b2b1b1;
+		margin:0 0 10px;
+	}
+
+	p.Descipcion_Pant{
+		overflow:hidden;
+		font-size:18px;
+		line-height:21px;
+		font-weight:normal;
+		color:#b2b1b1;
+		margin:0 auto 30px;
+		text-align:center;
+		max-width:660px;
+	}
+
+	#ContentBtnPant{
+		width:100%;
+		position:absolute;
+		bottom:0px;
+		left:0px;
+	}
+
+	a.panel{
+		background-color:#4d7fd5;
+		background-image:url(images/Arrow.png);
+		background-repeat:no-repeat;
+		height:60px;
+		line-height:60px;
+		font-size:17px;
+		font-weight:bold;
+		color:#ffffff;
+		-webkit-border-top-left-radius:5px;
+		-webkit-border-top-right-radius:5px;
+		-moz-border-radius-topleft:5px;
+		-moz-border-radius-topright:5px;
+		border-top-left-radius:5px;
+		border-top-right-radius:5px;
+	}
+	
+	a.panel:hover{
+		background:#6aa1ff;
+		background-image:url(images/Arrow.png);
+		background-repeat:no-repeat;
+	}
+	
+	a.next,
+	a.next:hover{
+		background-position:right top;
+		padding:0 60px 0 20px;
+	}
+	
+	a.prev,
+	a.prev:hover{
+		background-position:left -60px;
+		padding:0 20px 0 60px;
+	}
+
+	.itemColumn{
+		width:31.39534%;
+		float:left;
+	}
+	
+	.marginRight{
+		margin-right:2.90697%;
+	}
+	
+	h3.TitleColumn{
+		font-size:17px;
+		font-weight:bold;
+	}
+	
+	.ListItem{
+		display:block;
+		overflow:hidden;
+		text-align:left;
+		font-size:15px;
+		margin-bottom:10px;
+		background:url(images/ticket.gif) left top no-repeat;
+		padding-left:30px;
+		line-height:19px;
+	}
+	
+	.ListItem2{
+		display:block;
+		overflow:hidden;
+		text-align:left;
+		font-size:19px;
+		margin-bottom:15px;
+		background:url(images/ticket.gif) left top no-repeat;
+		padding-left:30px;
+		line-height:21px;
+	}
+
+	#wrapper #ContentInfo table tr td {
+	color: #000;
+	font-size: 12px;
+}
+    #wrapper #ContentInfo table {
+	color: #000;
+}
+    #wrapper #ContentInfo table tr td table tr td {
+	color: #000;
+}
+    #wrapper #ContentInfo table {
+	color: #FFF;
+}
+    #wrapper #ContentInfo table {
+	color: #FFF;
+}
+
+.filterable {
+    margin-top: 15px;
+	width: 100%;
+}
+.filterable .panel-heading .pull-right {
+    margin-top: -20px;
+}
+.filterable .filters input[disabled] {
+    background-color: transparent;
+    border: none;
+    cursor: auto;
+    box-shadow: none;
+    padding: 0;
+    height: auto;
+}
+.filterable .filters input[disabled]::-webkit-input-placeholder {
+    color: #333;
+}
+.filterable .filters input[disabled]::-moz-placeholder {
+    color: #333;
+}
+.filterable .filters input[disabled]:-ms-input-placeholder {
+    color: #333;
+}
+
+table.entries {width: 100%;border-spacing:0;margin:0;}
+table.entries thead.fixed {
+position:fixed;
+top:0;
+}
+
+    </style>
+</head>
+
+<body>
+<div class="boxContenedor">
+  </div>
+<div id="wrapper">
+  <div id="header">
+		<div class="Logo">
+			<img src="images/Logo.png" alt="Emol Automóviles" width="80px"/>
+		</div>
+	<h1 class="TitleSite">B2B Automóviles</h1>
+		<p>&nbsp;</p>
+    </div>
+</div>
+	
+	<div class="container" style="width:100%" >
+  <div>
+    <div class="panel panel-primary filterable">
+  <div id = "fecha" class="panel-heading">
+          <h4>
+            Scheduling de Integración de Concesionarios
+          </h4>
+      </div>
+	
+      <table id="entriestable" class="table table-hover table-responsive entries ">
+        <thead id="thead">
+          <tr>
+            <th bgcolor="#E3E3E6" class="col-xs-1" style="width: 7%;"><p class="text-justify"></p><h5><strong><h6> <b>Última Actualización: <br>20-04-2016 <i> 20:00</i></b> </br> </h6>Concesionario</strong></h5><p></p></th>
+            <th bgcolor="#E3E3E6" class="col-xs-2" style="width: 13%;"><p class="text-justify"></p><h5><strong>Tipo de Integración</strong></h5><p></p></th>
+			<th bgcolor="#E3E3E6" class="col-xs-1" style="width: 8%;"><p class="text-justify"></p><h5><strong>Estado Integración Web-B2B<p></p></strong></h5></th>
+			<th bgcolor="#E3E3E6" class="col-xs-7" style="width: 42%;"><p class="text-justify"></p><h5><strong>Tracking </strong></h5><p></p></th>
+            <th bgcolor="#E3E3E6" class="col-xs-1" style="width: 8%;"><p class="text-justify"></p><h5><strong>Fecha Solicitud<p></p></strong></h5></th>
+			<th bgcolor="#E3E3E6" class="col-xs-1" style="width: 7%;"><p class="text-justify"></p><h5><strong>Petición de Plan.io<p></p></strong></h5></th>
+			<th bgcolor="#E3E3E6" class="col-xs-1" style="width: 2%;"><p class="text-justify"></p><h5><strong>Fecha de Compromiso Liberación</strong></h5><p></p></th>
+			<th bgcolor="#E3E3E6" class="col-xs-1" style="width: 1%;"><p class="text-justify"></p><h5><strong>Fecha Real Liberación</strong></h5><p></p></th>
+                          
+                          
+          </tr>
+        </thead>
+        <div style="width=100%">
+        <tbody id="tbody">
+		
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>PLANET CAR - SAN MIGUEL </br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>20/04/2016 17:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>20/04/2016  17:30 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>20/04/2016 18:00 </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>20/04/2016 </br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>20/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>20/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>POMPEYO CARRASCO AUTOMÓVILES LIMITADA  </br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	     <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>19/04/2016 17:50</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>19/04/2016  18:00 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>19/04/2016 18:45 </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>19/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>19/04/2016 </br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>19/04/2016 </br> </p></td>
+		
+		</tr>
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>AUTOMOTORA SAN PABLO </br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>15/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>19/04/2016  12:00 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>19/04/2016 16:15 </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>15/04/2016 </br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>19/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>19/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>MOTORDOO </br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>15/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>18/04/2016  12:00 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>18/04/2016 16:15 </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>PONS AUTOMÓVILES </br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>15/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>18/04/2016  12:00 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>18/04/2016 16:15 </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>RIVERCAR </br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>15/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>18/04/2016  12:00 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>18/04/2016 16:15 </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>LIVE MOTORS </br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>15/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>18/04/2016  12:00 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>18/04/2016 16:15 </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>15/04/2016 </br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>RINO MOTOS </br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>15/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>18/04/2016  12:00 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>18/04/2016 16:15 </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>15/04/2016 </br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>18/04/2016 </br>  </p></td>
+		
+		</tr>
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>PITS AUTOS LTDA </br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>15/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>18/04/2016  12:00 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>18/04/2016 16:15 </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>O Y Z AUTOMÓVILES </br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>15/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>18/04/2016 12:00 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>18/04/2016 16:15 </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>SB AUTOMOTRIZ </br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>15/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>18/04/2016  12:00 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>18/04/2016 16:15 </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>USADOS PREMIUM</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>15/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>18/04/2016  12:00 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>18/04/2016 16:15 </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>THE COLLECTION</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>15/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>18/04/2016  12:00 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>18/04/2016 16:15 </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>15/04/2016 </br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>AUTOMOTORA RODRIGUEZ</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>15/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>18/04/2016  12:00 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>18/04/2016 16:15 </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br> </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br></p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br></p></td>
+		
+		</tr>
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>VITACAR</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>15/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>18/04/2016  12:00 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>18/04/2016 16:15 </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>18/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>AUTOMÓVILES DMC</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>ARCHIVO CSV</br> </p></td>
+	   	<td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía archivo CSV para realizar carga  <i>15/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se integra mediante CSV e imágenes <i>15/04/2016  17:35 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Se libera Concesionario en B2B Automóviles <i>15/04/2016 18:00 </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>ANDRADE AUTOS SPA</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>ARCHIVO CSV</br> </p></td>
+	   	<td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía archivo CSV para realizar carga  <i>15/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se integra mediante CSV e imágenes <i>15/04/2016  19:35 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Se libera Concesionario en B2B Automóviles <i>15/04/2016 19:45  </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		
+			<tr class="success">
+           <td class="col-xs-1"><p class="text-center"> <br>LA DEHESA AUTOS (COMERCIAL DELVA SPA)</br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"> <br>Integración Web Directa  </br><i>Operado por CSV</i> </p></td>
+	        <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se integra mediante Web Directa, Se opera mediante Archivo CSV" data-original-title="Concesionario no Operativo "></p></td>
+		 <td class="col-xs-6"><p class="text-center"> 
+		
+		 <div class="alert alert-success" role="alert"> 
+		 <table> 
+        <table width="90%" align="center" >
+		
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía solicitud de Integración <br><i>05/04/2016 16:45</i></br>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se analiza solución mediante Integración Web Directa <i></i> </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se desarrolla solución mediante Web Directa, se opera mediante archivo CSV <i></i> </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		  
+		  <td class="col-xs-1"><p class="text-center"> <br> 07/04/2016 </br> 15:30 </p></td> 
+		  <td class="col-xs-1"><p class="text-center"><a href="https://clasificados.plan.io/issues/1015" /> <br>#1015</br> </p></td> 
+	      <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>POr Definir</br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		
+		
+		
+		<tr class="success">
+           <td class="col-xs-1"><p class="text-center"> <br>ROSSELOT</br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"> <br>Integración Web Directa </br> </p></td>
+	        <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		 <td class="col-xs-6"><p class="text-center"> 
+		
+		 <div class="alert alert-success" role="alert"> 
+		 <table> 
+        <table width="90%" align="center" >
+		
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía solicitud de Integración <br><i>30/03/2016 18:00</i></br>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se analiza solución mediante Integración Web Directa <i>31/03/2016 09:30</i> </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se desarrolla solución mediante Web Directa <i>15/04/2016 17:00</i> </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		  
+		  <td class="col-xs-1"><p class="text-center"> <br> 07/04/2016 </br> 15:30 </p></td> 
+		  <td class="col-xs-1"><p class="text-center"><a href="https://clasificados.plan.io/issues/1024" /> <br>#1024</br> </p></td> 
+	      <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		
+		
+		
+		
+			<tr class="success">
+           <td class="col-xs-1"><p class="text-center"> <br>FAVAL</br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"> <br>Integración Web Directa </br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		 <td class="col-xs-6"><p class="text-center"> 
+		
+		 <div class="alert alert-success" role="alert"> 
+		 <table> 
+        <table width="90%" align="center" >
+		
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía solicitud de Integración <br><i>30/03/2016 18:00</i></br>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se analiza solución mediante Integración Web Directa <i>31/03/2016 09:30</i> </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se desarrolla e implementa solución Web Directa  <i>15/04/2016 17:00</i> </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		  
+		  <td class="col-xs-1"><p class="text-center"> <br> 30/03/2016 </br> 18:00 </p></td> 
+		  <td class="col-xs-1"><p class="text-center"><a href="https://clasificados.plan.io/issues/999" /> <br>#999</br> </p></td> 
+	      <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br> AUTOMOTORA MELHUISH LTDA.</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>13/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>14/04/2016  17:30 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>15/04/2016 09:45  </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>13/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>E KOVACS S.A.</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>13/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>14/04/2016  17:15 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>15/04/2016 09:30  </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>13/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>15/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		
+		
+		
+		
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>AUTOMOTORA ESTACIÓN CENTRAL</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>05/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>13/04/2016  17:15 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>14/04/2016 09:30  </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>05/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>14/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>14/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>PABLO DE LA MAZA AUTOMÓVILES</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>05/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>13/04/2016  17:15 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>14/04/2016 09:30  </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>05/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>14/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>14/04/2016</br>  </p></td>
+		
+		</tr>
+		
+				
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>ZONAUTO</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>05/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>13/04/2016  17:15 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>14/04/2016 09:30  </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>05/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>14/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>14/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>AUTOCARGO</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>05/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>13/04/2016  17:15 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>14/04/2016 09:30  </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>05/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>14/04/2016 </br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>14/04/2016 </br>  </p></td>
+		
+		</tr>
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>AUTO SPEED</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>05/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>12/04/2016  17:15 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>13/04/2016 09:30  </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>05/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>13/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>13/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>COMERCIAL JMS</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>ARCHIVO CSV</br> </p></td>
+	   	<td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía archivo CSV para realizar carga  <i>05/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se integra mediante CSV e imágenes <i>12/04/2016  13:15 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Se libera Concesionario en B2B Automóviles <i>12/04/2016 17:50  </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>05/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>12/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>12/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>AUTO BUY </br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl </br><i>Operado por CSV</i> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center"> 
+		
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>08/04/2016 15:20</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i>11/04/2016 13:00</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>11/04/2016 16:00</i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br> 08/04/2016 </br> 15:20 </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><a href= https://clasificados.plan.io/issues/1035 ><br>#1035</br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>11/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>11/04/2016</br>  </p></td>
+		 			
+		</tr>
+		
+		
+		
+		
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>AUTOMOTORA DEL VALLE</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>05/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>11/04/2016  17:15 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>11/04/2016 17:30  </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>05/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>11/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>11/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>AUTOMOTRIZ JULIO INFANTE</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br><i>Operado por CSV</i> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>05/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>11/04/2016  16:45 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>11/04/2016 17:00  </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>05/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>11/04/2016 </br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>11/04/2016 </br>  </p></td>
+		
+		</tr>
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>AUTOMOTORA OSSA</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>05/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>08/04/2016  16:45 </i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>08/04/2016 17:00  </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>05/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>08/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>08/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		
+		
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>ROSVAL  </br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>05/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>08/04/2016  16:30</i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>08/04/2016  16:45  </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>05/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>08/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>08/04/2016</br>  </p></td>
+		
+		</tr>
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>CITROEN ORIGEN </br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>05/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>08/04/2016  16:15</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial <i>08/04/2016 16:30  </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>05/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>08/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>08/04/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br> RENAULT BILBAO</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b> Envía Concesionaría    <i>05/04/2016 12:00 </i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b> Se implementa solución de Integración <i>08/04/2016 16:00 </i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> Concesionario implementado, queda a la espera de validación comercial    <i>08/04/2016 16:15  </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br>05/04/2016</br>  </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><br> No Aplica </br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>08/04/2016 </br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>08/04/2016 </br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>SALAZAR ISRAEL (AUTOMOTRIZ CORDILLERA) </br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl </br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center"> 
+		
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>07/04/2016 16:15</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i>08/04/2016 13:50</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>08/04/2016 16:00</i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br> 07/04/2016 </br> 16:45 </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><a href= https://clasificados.plan.io/issues/1027 ><br>#1027</br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>08/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>08/04/2016</br>  </p></td>
+		 			
+		</tr>
+		
+		<tr class="success">
+           <td class="col-xs-1"><p class="text-center"> <br> AUTOMOTRIZ JMD VITACURA </br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"> <br>ARCHIVO CSV </br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td> 
+		 <td class="col-xs-6"><p class="text-center"> 
+		
+		 <div class="alert alert-success" role="alert"> 
+		 <table> 
+        <table width="90%" align="center" >
+		
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía archivo CSV para realizar carga <br><i>08/04/2016 12:00</i></br>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se integra mediante CSV e imágenes <i>08/04/2016 13:00</i> </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles  <i> 08/04/2016</i> 14:00 </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		  
+		  <td class="col-xs-1"><p class="text-center"> <br> 08/04/2016 </br> 12:00 </p></td> 
+		  <td class="col-xs-1"><p class="text-center"><a /> -  <br></br> </p></td> 
+	      <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		
+		
+		<tr class="success">
+           <td class="col-xs-1"><p class="text-center"> <br> CURIFOR USADOS </br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"> <br>ARCHIVO CSV </br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td> 
+		 <td class="col-xs-6"><p class="text-center"> 
+		
+		 <div class="alert alert-success" role="alert"> 
+		 <table> 
+        <table width="90%" align="center" >
+		
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía archivo CSV para realizar carga <br><i>08/04/2016 12:00</i></br>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se integra mediante CSV e imágenes <i>08/04/2016 12:45</i> </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles  <i> 08/04/2016</i> 14:00 </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		  
+		  <td class="col-xs-1"><p class="text-center"> <br> 08/04/2016 </br> 12:00 </p></td> 
+		  <td class="col-xs-1"><p class="text-center"><a /> <br></br> </p></td> 
+	      <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		
+		
+		<tr class="success">
+           <td class="col-xs-1"><p class="text-center"> <br> AUTOMOTRIZ JORGE CHACANO </br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"> <br>ARCHIVO CSV </br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td> 
+		 <td class="col-xs-6"><p class="text-center"> 
+		
+		 <div class="alert alert-success" role="alert"> 
+		 <table> 
+        <table width="90%" align="center" >
+		
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía archivo CSV para realizar carga <br><i>08/04/2016 12:00</i></br>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se integra mediante CSV e imágenes <i>08/04/2016 12:45</i> </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles  <i> 08/04/2016</i> 14:00 </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		  
+		  <td class="col-xs-1"><p class="text-center"> <br> 08/04/2016 </br> 12:00 </p></td> 
+		  <td class="col-xs-1"><p class="text-center"> -  </p></td> 
+	      <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		
+		
+		<tr class="success">
+           <td class="col-xs-1"><p class="text-center"> <br> COMERCIAL AUTOMOTRIZ JPN LIMITADA </br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"> <br>Integración Web Directa </br><i>Operado por CSV</i> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		 <td class="col-xs-6"><p class="text-center"> 
+		
+		 <div class="alert alert-success" role="alert"> 
+		 <table> 
+        <table width="90%" align="center" >
+		
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía solicitud de Integración  <br><i>07/04/2016 15:40</i></br> <b>2</b>. Queda a la espera de Integración Web   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se analiza solución mediante Integración Web Directa  <br><i>07/04/2016 16:15</i></br><b>2.</b>Se desarrolla Integración Web</b> </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b> A la espera de implementación de solución mediante Integración Web Directa <br><b>2.</b>Se implementa solución de Integración Web  <i>08/04/2016 15:00</i>  </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		  
+		  <td class="col-xs-1"><p class="text-center"> <br> 07/04/2016 </br> 16:00 </p></td> 
+		  <td class="col-xs-1"><p class="text-center"><a href="https://clasificados.plan.io/issues/1025" /> <br>#1025</br> </p></td> 
+	      <td class="col-xs-1"><p class="text-center"> <br>08/04/2016</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>08/04/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		<tr class="success">
+           
+		   <td class="col-xs-1"><p class="text-center"> <br>DOSSIL</br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"> <br>Integración Web Directa </br> </p></td>
+	      <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		   <td class="col-xs-6"><p class="text-center"> 
+		
+		 <div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía solicitud de Integración <br><i>19/01/2016 12:00</i></br> <b>2</b>. Queda a la espera de Integración Web   </small><br></br><br></br> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se analiza solución mediante Integración Web Directa <i>06/01/2016 12:30</i> <br><B>2.</b> Se desarrolla e implementa Integración Web <i> 07/04/2016</i></small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>A la espera de implementación de solución mediante Integración Web Directa <i></i><br><b>2</b>. Se implementa y se libera Concesionario en B2B Automóviles <i> 07/04/2016 16:00</i><br>   </br> </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br> 19/01/2016 </br> 12:00 </p></td> 
+		  <td class="col-xs-1"><p class="text-center"> <a href="https://clasificados.plan.io/issues/1019#note-2" /> <br>#1019</br> </p></td> 
+	      <td class="col-xs-1"><p class="text-center"> <br>07/04/2016</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>07/04/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>SOCIEDAD BODEGAS GENERALES DE LEASING S.A (BGL) </br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	   <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center"> 
+		
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>29/03/2016 16:00</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i>01/04/2016 17:00</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>01/04/2016 17:30</i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br> 29/03/2016 </br> 11:30 </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><a href= https://clasificados.plan.io/issues/989 ><br>#989</br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>01/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>01/04/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		
+		
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>COMERCIO ROSS LTDA  </br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center"> 
+		
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>31/03/2016 11:30</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i>01/04/2016 17:00</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>01/04/2016 17:30</i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br> 31/03/2016 </br> 11:30 </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><a href= https://clasificados.plan.io/issues/1000 ><br>#1000</br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>01/04/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>01/04/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+				
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br> 100AUTOS  </br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center"> 
+		
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>30/03/2016 15:30</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i>31/03/2016 8:45</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>31/03/2016 09:00</i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br> 30/03/2016 </br> 15:30 </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><a href= https://clasificados.plan.io/issues/997 ><br>#997</br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>31/03/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>31/03/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>AUTOMOTORA GSC MOTORES LTDA </br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - ChileAutos.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center"> 
+		
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>29/03/2016 16:00</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i>30/03/2016 17:50</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>31/03/2016 08:00</i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br> 29/03/2016 </br> 16:00 </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><a href= https://clasificados.plan.io/issues/990 ><br>#990</br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>31/03/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>31/03/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>CLASIC</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>ARCHIVO CSV </br> </p></td><td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+             
+		<td class="col-xs-6"><p class="text-center">  
+		
+		   <div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+		
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía archivo CSV para realizar carga<br><i>14/03/2016 12:00</i></br>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se integra mediante CSV e imágenes <i>29/03/2016 12:30</i> </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i> 29/03/2016 13:30</i> </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		  
+		<td class="col-xs-1"><p class="text-center"> <br> 14/03/2016 </br> 15:00 </p></td>  
+	    <td class="col-xs-1"><p class="text-center"><a href="https://clasificados.plan.io/issues/951" /> <br>#951</br> </p></td> 
+	    <td class="col-xs-1"><p class="text-center"> <br>29/03/2016</br> </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br>29/03/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		<tr class="success">
+           <td class="col-xs-1"><p class="text-center"> <br>CAR FULL</br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"> <br>ARCHIVO CSV </br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+			  <td class="col-xs-6"><p class="text-center"> 
+		
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+		<table width="90%" align="center" >
+		
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía archivo CSV para realizar carga<br><i>19/03/2016 12:00</i></br>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se integra mediante CSV e imágenes <i>24/03/2016 12:30</i> </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles  <i> 29/03/2016</i> 13:45 </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+ 		  <td class="col-xs-1"><p class="text-center"> <br> 07/03/2016 </br> 15:30 </p></td> 
+		  <td class="col-xs-1"><p class="text-center"><a href="https://clasificados.plan.io/issues/931" /> <br>#931</br> </p></td> 
+	      <td class="col-xs-1"><p class="text-center"> <br>29/03/2016</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>29/03/2016 </br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		
+		<tr class="success">
+           <td class="col-xs-1"><p class="text-center"> <br>PATAGONIA MOTORS</br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"> <br>ARCHIVO CSV </br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		   <td class="col-xs-6"><p class="text-center"> 
+		
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+		
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía archivo CSV para realizar carga <br><i>18/03/2016 12:00</i></br>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se integra mediante CSV e imágenes <i>24/03/2016 12:30</i> </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles  <i> 29/03/2016</i> 14:00 </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>19/02/2016</br>12:00 </p></td>
+		  <td class="col-xs-1"><p class="text-center"><a href="https://clasificados.plan.io/issues/897" /> <br>#897</br> </p></td> 
+	      <td class="col-xs-1"><p class="text-center"> <br>29/03/2016</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>29/03/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		<tr class="success">
+           <td class="col-xs-1"><p class="text-center"> <br> GABRIEL HORMAZABAL </br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"> <br>ARCHIVO CSV </br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td> 
+		 <td class="col-xs-6"><p class="text-center"> 
+		
+		 <div class="alert alert-success" role="alert"> 
+		 <table> 
+        <table width="90%" align="center" >
+		
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía archivo CSV para realizar carga <br><i>29/03/2016 12:00</i></br>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se integra mediante CSV e imágenes <i>29/03/2016 12:45</i> </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles  <i> 29/03/2016</i>14:15 </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		  
+		  <td class="col-xs-1"><p class="text-center"> <br> 07/04/2016 </br> 16:00 </p></td> 
+		  <td class="col-xs-1"><p class="text-center"><a href="https://clasificados.plan.io/issues/1025" /> <br>#1025</br> </p></td> 
+	      <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>CAMPOS AUTOMOTRIZ</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center"> 
+		
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>21/02/2016 17:00</i> <br></br>  </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i>22/03/2016 16:00</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>23/03/2016 08:30</i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br> 21/03/2016 </br> 17:00 </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><a href= https://clasificados.plan.io/issues/965 ><br>#965</br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>23/03/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>23/03/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+			<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>AUTOMOTRIZ HUERTA Y CARRASCO</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">
+		
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>11/02/2016 12:00</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i>21/03/2016 13:30</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>21/03/2016 13:50</i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br> 11/02/2016 </br> 12:00 </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><a href= https://clasificados.plan.io/issues/963 ><br>#963</br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>21/03/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>21/03/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>CASTELL AUTOMOVILES</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - <br>ChileAutos.cl</br></br> </p></td>
+		<td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>19/02/2016 16:30</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i>21/03/2016 12:30</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>21/03/2016 13:45</i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br> 19/02/2016 </br> 16:30 </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><a href= https://clasificados.plan.io/issues/899 ><br>#899</br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>21/03/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>21/03/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>AUTOSUMMIT</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">
+        <div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>17/03/2016 15:20</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración<i><br>21/03/2016 12:30</br></i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>21/03/2016 13:45</i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br> 17/03/2016 </br> 15:20 </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><a href= https://clasificados.plan.io/issues/957 ><br>#957</br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>21/03/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>21/03/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+			<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>AUTOCORP</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>14/03/2016 12:00</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i>16/03/2016 10:30</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>16/03/2016 13:30</i>   </small></td></p>
+		</tr>
+	
+	   </table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br> 14/02/2016 </br> 15:00 </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><a href= https://clasificados.plan.io/issues/949 ><br>#949</br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>16/03/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>16/03/2016</br> </p></td>
+		 
+			
+		</tr>
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>COMERCIAL AUTOMOTRIZ RAÚL LABBÉ (DITEC)</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>03/03/2016 12:00</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i>15/03/2016 16:00</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>16/03/2016 09:00</i>   </small></td></p>
+		</tr>
+	
+	   </table>  </div>  </p></td>
+		  
+	      <td class="col-xs-1"><p class="text-center"> <br> 03/03/2016 </br> 17:30 </p></td> 
+		  <td class="col-xs-1"><p class="text-center"><a href= https://clasificados.plan.io/issues/927 ><br>#927</br></p></td>
+	      <td class="col-xs-1"><p class="text-center"> <br>16/03/2016</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>16/03/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		<tr class="success">
+		<td class="col-xs-1"><p class="text-center"> <br>MAS AUTOS</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>ARCHIVO CSV</br> </p></td>
+	     <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía archivo CSV para realizar carga <i>01/03/2016 12:00</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se integra mediante CSV e imágenes <i>16/03/2016 12:00</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>16/03/2016 14:00</i>   </small></td></p>
+		</tr>
+		
+	
+	   </table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br> 01/03/2016 </br> 17:30 </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><a href= https://clasificados.plan.io/issues/919 ><br>#919</br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>16/03/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>16/03/2016</br>  </p></td>
+		 			
+		</tr>
+		
+		<tr class="success">
+		<td class="col-xs-1"><p class="text-center"> <br>AUTOCENTRO ÑUÑOA</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>ARCHIVO CSV</br> </p></td>
+	     <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía archivo CSV para realizar carga <i>25/02/2016 12:00</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se integra mediante CSV e imágenes <i>01/03/2016 13:30</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>09/03/2016 13:00</i>   </small></td></p>
+		</tr>
+		
+	
+	   </table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br> 25/02/2016 </br> 12:00 </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><a href= https://clasificados.plan.io/issues/912 ><br>#912</br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>09/03/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>09/03/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>AUTOMOTRIZ LAS CONDES</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center"><div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>26/02/2016 12:00</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i>09/03/2016 10:30</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>09/03/2016 10:30</i>   </small></td></p>
+		</tr>
+	
+	   </table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br> 26/02/2016 </br> 12:00 </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><a href= https://clasificados.plan.io/issues/915 ><br>#915</br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>09/03/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>09/03/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>VALENZUELA DELARZE</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center"><div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>11/02/2016 12:00</i> <br><b>2.</b>Se corrige razón social <i>01/03/2016 17:30</i></br>  </small> <br></br> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se detecta problemas con la razón social <i>22/02/2016 12:00</i> <br><b>2.</b> Se valida nueva razón social y se implementa solución de Integración <i>02/03/2016 12:00</i></br>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>A la espera de información correcta <br><b>2.</b>Se libera Concesionario en B2B Automóviles <i>02/03/2016 15:20</i></br> <br></br> </small></td></p>
+		</tr>
+	   </table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br> 11/02/2016 </br> 12:00 </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><a href= https://clasificados.plan.io/issues/881 ><br>#881</br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>24/02/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>03/03/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>AUTOS LOS DOMINICOS</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center"><div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i><br>11/02/2016 12:00</br></i> <b>2.</b>Se corrige razón social <i>24/02/2016 17:30</i> </small> <br> </br> <br></br> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se detecta problemas con la razón social <i><br>24/02/2016 13:00</br></i> <b>2.</b> Se valida nueva razón social y se implementa solución de Integración <i>01/03/2016 17:20</i>  </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>A la espera de información correcta <br><b>2.</b>Se libera Concesionario en B2B Automóviles <i>03/03/2016 16:00</i></br> <br> </br>  </small> <br></br></td></p>
+		</tr>
+	
+	   </table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br> 11/02/2016 </br> 12:00 </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><a href= https://clasificados.plan.io/issues/898 ><br>#898</br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>02/03/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>03/03/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>AUTOMOTORA BILBAO</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+		<td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>01/03/2016 12:00</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i>01/03/2016 13:00</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>01/03/2016 13:00</i>   </small></td></p>
+		</tr>
+	
+	   </table>  </div>  </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br> 01/03/2016 </br> 12:00 </p></td> 
+		<td class="col-xs-1"><p class="text-center"><a href= https://clasificados.plan.io/issues/918 ><br>#918</br></p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>01/03/2016</br> </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br>01/03/2016</br>  </p></td>
+		 
+			
+		</tr>
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>MARUBENI (MARAUTO)</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>11/02/2016 12:00</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i>29/03/2016 13:00</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>29/02/2016 15:00</i>   </small></td></p>
+		</tr>
+	
+	   </table>  </div>  </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br> 11/02/2016 </br> 12:00 </p></td> 
+		<td class="col-xs-1"><p class="text-center"><a href= https://clasificados.plan.io/issues/885 /><br>#885</br></p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>29/02/2016</br> </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br>29/02/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>MONTCAR (AUTOMOTORA EDUARDO CARRIL HUERTA E I R L)</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>11/02/2016 12:00</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i>23/02/2016 13:00</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>23/02/2016 15:00</i>   </small></td></p>
+		</tr>
+	
+	   </table>  </div>  </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br> 11/02/2016 </br> 12:00 </p></td> 
+		<td class="col-xs-1"><p class="text-center"><a href =  https://clasificados.plan.io/issues/882 /><br>#882</br></p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>23/02/2016</br> </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br>23/02/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>CUETO USADOS</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>11/02/2016 12:00</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i>19/02/2016 13:00</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>19/02/2016 15:00</i>   </small></td></p>
+		</tr>
+	
+	   </table>  </div>  </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br> 11/02/2016 </br> 12:00 </p></td> 
+		<td class="col-xs-1"><p class="text-center"><a href = https://clasificados.plan.io/issues/883 /><br>#883</br></p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>19/02/2016</br> </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br>19/02/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>COSECHE</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	   <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>11/02/2016 12:00</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>SSe validan datos de Concesionario y se implementa solución de Integración <i>17/02/2016 13:00</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>17/02/2016 15:00</i>   </small></td></p>
+		</tr>
+	
+	   </table>  </div>  </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br> 11/02/2016 </br> 12:00 </p></td> 
+		<td class="col-xs-1"><p class="text-center"><a href = https://clasificados.plan.io/issues/880 /><br>#880</br></p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>17/02/2016</br> </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br>17/02/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>AVENTURA MOTORS</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>29/01/2016 12:00</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i>11/02/2016 13:00</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>11/02/2016 15:00</i>   </small></td></p>
+		</tr>
+	
+	   </table>  </div>  </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br> 29/01/2016 </br> 12:00 </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><a href = https://clasificados.plan.io/issues/844 /><br> #844</br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>11/02/2016</br> </p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>11/02/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>DUMAY</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+		<td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>19/01/2016 12:00</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i>05/02/2016 13:00</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>09/02/2016 15:00</i>   </small></td></p>
+		</tr>
+	
+	   </table>  </div>  </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br> 19/01/2016 </br> 12:00 </p></td> 
+		<td class="col-xs-1"><p class="text-center"><a href= https://clasificados.plan.io/issues/872 /><br>  #872</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>09/02/2016</br> </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br>09/02/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> MANQUEHUE IV S.P.A (LARRUY)</p></td>
+	    <td class="col-xs-2"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+		<td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>02/02/2016 12:00</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i>03/02/2016 13:00</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i>05/02/2016 15:00</i>   </small></td></p>
+		</tr>
+	
+	   </table>  </div>  </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br> 02/02/2016 </br> 12:00 </p></td> 
+	    <td class="col-xs-1"><p class="text-center"> <br> - </br> </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br>05/02/2016</br> </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br>05/02/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>DERCO</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover"           
+          title="aplica" 
+          data-content="Integrado en el sistema B2B"/><img src="images/auto2.jpg" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario aún no se encuentra operativo" data-original-title="Concesionario no Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">  
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i>11/02/2016 12:00</i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i>25/02/2016 10:30</i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se queda a la espera de liberación de Concesionario <i>22/03/2016 </i>   </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		 <td class="col-xs-1"><p class="text-center"> <br> 11/02/2016 </br> 12:00 </p></td> 
+		 <td class="col-xs-1"><p class="text-center"><a href= https://clasificados.plan.io/issues/884 ><br>#884</br></p></td>
+	     <td class="col-xs-1"><p class="text-center"> <br>22/02/2016</br> </p></td>
+		 <td class="col-xs-1"><p class="text-center"> <br>22/03/2016</br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		
+			
+	    <tr class="success">
+        <td class="col-xs-1"><p class="text-center"> <br>BRUNO FRITSCH</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Integración Web Directa</br> </p></td>
+		<td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+        <table width="90%" align="center" >
+					
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de WebService  <i><br>17/03/2016 15:20</br></i> <b>2.</b>Corrige datos de WebService <i><br>21/03/2016 14:30</i><br><b>3.</b> A la espera de avance de solución</br> </small> <br> </br> <br> </br> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se detecta problemas con WebService  <i><br>17/02/2016 17:20</br></i> <b>2.</b> Se validan datos WebService <i>23/03/2016 08:30</i>  <br><b>3.</b> Se detectan datos erróneos de servicio del Concesionario (no retrasa el avance) </br><i>23/03/2016 16:00 </i> </small> <br><small><b>4.</b> Se integra mediante Integración Web Directa 24/03/2016 14:00</br></small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>A la espera de corrección de información   <b>2.</b>En proceso de desarrollo de solución <i><br>21/03/2016 16:00</br></i>  <b>3.</b> Fase de Integración en pruebas.  <i><br>24/03/2016 13:00</br></i><br> </br>   <br><b>4.</b> Concesionario queda integrado en el sistema B2B</br> <i>24/03/2016 14:00</i></td></p>
+		</tr>
+		</table>  </div>  		 	
+	    </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br> 17/03/2016 </br> 15:20 </p></td> 
+		  <td class="col-xs-1"><p class="text-center"><a href="https://clasificados.plan.io/issues/956#note-1" /> <br>#956</br> </p></td> 
+	      <td class="col-xs-1"><p class="text-center"> <br> 24/03/2016 14:00</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br> 24/03/2016 14:00 </br>  </p></td>
+		 
+			
+		</tr>
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> GUILLERMO MORALES </p></td>
+	    <td class="col-xs-2"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+		<td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i></i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i></i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i></i>   </small></td></p>
+		</tr>
+	
+	   </table>  </div>  </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br> 16/11/2015 </br> 12:00 </p></td> 
+	    <td class="col-xs-1"><p class="text-center"> <br> - </br> </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br> - </br> </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br> - </br>  </p></td>
+		 
+			
+		</tr>
+		
+		<tr class="success">
+        <td class="col-xs-1"><p class="text-center"> PIAMONTE </p></td>
+	    <td class="col-xs-2"><p class="text-center"> <br>Cartera Web - destacados.cl</br> </p></td>
+		<td class="col-xs-1"><p class="text-center"><img src="images/1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Integrado en el sistema B2B" data-original-title="Aplica"><img src="images/auto1.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="" data-content="Concesionario funciona correctamente en B2B Automóviles" data-original-title="Concesionario Operativo "></p></td>
+		<td class="col-xs-6"><p class="text-center">
+		<div class="alert alert-success" role="alert"> 
+		<table> 
+      <table width="90%" align="center" >
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía datos de Concesionario  <i></i>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se validan datos de Concesionario y se implementa solución de Integración <i></i>   </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Se libera Concesionario en B2B Automóviles <i></i>   </small></td></p>
+		</tr>
+	
+	   </table>  </div>  </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br> 16/11/2015 </br> 12:00 </p></td> 
+	    <td class="col-xs-1"><p class="text-center"> <br> - </br> </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br> - </br> </p></td>
+		<td class="col-xs-1"><p class="text-center"> <br> - </br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		
+		<!--
+		
+		<tr class="warning">
+           <td class="col-xs-1"><p class="text-center"> <br>DIFOR</br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"> <br>Integración Web Directa </br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"><img src="images/2.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover" 
+              title="En Proceso de Evaluación"
+              data-content="Actualmente se está desarrollando la solución mediante Integración Web Directa"/><img src="images/auto3.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="Concesionario no Integrado" data-content="El Concesionario aún no está en proceso de Integración" data-original-title="  "></p></td> 
+		 <td class="col-xs-6"><p class="text-center"> 
+		
+		 <div class="alert alert-warning" role="alert"> 
+		 <table> 
+        <table width="90%" align="center" >
+		
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía solicitud de Integración <br><i>19/04/2016 15:10</i></br>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se analiza solución mediante Integración Web Directa <i></i> </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Análisis de implementación mediante Integración Web Directa  <i></i> </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		  
+		  <td class="col-xs-1"><p class="text-center"> <br>18/04/2016 16:00</br> </p></td> 
+		    <td class="col-xs-1"><p class="text-center"><a href="https://clasificados.plan.io/issues/1075" /> <br>#1075</br> </p></td> 
+	      <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br>  </p></td>
+		 
+			
+		</tr>
+		
+		-->
+		
+		<tr class="warning">
+           <td class="col-xs-1"><p class="text-center"> <br>TEAM GREEN</br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"> <br>Integración Web Directa </br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"><img src="images/2.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover" 
+              title="En Proceso de Evaluación"
+              data-content="Actualmente se está desarrollando la solución mediante Integración Web Directa"/><img src="images/auto3.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="Concesionario no Integrado" data-content="El Concesionario aún no está en proceso de Integración" data-original-title="  "></p></td> 
+		 <td class="col-xs-6"><p class="text-center"> 
+		
+		 <div class="alert alert-warning" role="alert"> 
+		 <table> 
+        <table width="90%" align="center" >
+		
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía solicitud de Integración <br><i>18/04/2016 16:00</i></br>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se analiza solución mediante Integración Web Directa <i></i> </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Análisis de implementación mediante Integración Web Directa  <i></i> </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		  
+		  <td class="col-xs-1"><p class="text-center"> <br>18/04/2016 16:00</br> </p></td> 
+		    <td class="col-xs-1"><p class="text-center"><a href="https://clasificados.plan.io/issues/1070" /> <br>#1070</br> </p></td> 
+	      <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		
+		<tr class="warning">
+           <td class="col-xs-1"><p class="text-center"> <br>TALCIANI Y BASUALDO LTDA</br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"> <br>Integración Web Directa </br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"><img src="images/2.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover" 
+              title="En Proceso de Evaluación"
+              data-content="Actualmente se está desarrollando la solución mediante Integración Web Directa"/><img src="images/auto3.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="Concesionario no Integrado" data-content="El Concesionario aún no está en proceso de Integración" data-original-title="  "></p></td> 
+		 <td class="col-xs-6"><p class="text-center"> 
+		
+		 <div class="alert alert-warning" role="alert"> 
+		 <table> 
+        <table width="90%" align="center" >
+		
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía solicitud de Integración <br><i>13/04/2016 16:15</i></br>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se analiza solución mediante Integración Web Directa <i></i> </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Análisis de implementación mediante Integración Web Directa  <i></i> </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		  
+		  <td class="col-xs-1"><p class="text-center"> <br>13/04/2016 16:15 </br> </p></td> 
+		  <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br> </p></td> 
+	      <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		
+		<!--
+		<tr class="warning">
+           <td class="col-xs-1"><p class="text-center"> <br>NISSAN MACIAS</br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"> <br>Integración Web Directa </br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"><img src="images/2.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover" 
+              title="En Proceso de Evaluación"
+              data-content="Actualmente se está desarrollando la solución mediante Integración Web Directa"/><img src="images/auto3.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="Concesionario no Integrado" data-content="El Concesionario aún no está en proceso de Integración" data-original-title="  "></p></td> 
+		 <td class="col-xs-6"><p class="text-center"> 
+		
+		 <div class="alert alert-warning" role="alert"> 
+		 <table> 
+        <table width="90%" align="center" >
+		
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía solicitud de Integración <br><i></i></br>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se analiza solución mediante Integración Web Directa <i></i> </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Análisis de implementación mediante Integración Web Directa  <i></i> </small></td></p>
+		</tr>
+		
+		
+		
+		</table>  </div>  </p></td>
+		  
+		  <td class="col-xs-1"><p class="text-center"> <br>Por Definir </br> </p></td> 
+		  <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br> </p></td> 
+	      <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br>  </p></td>
+		 
+			
+		</tr>
+-->
+         
+		
+		<tr class="warning">
+           <td class="col-xs-1"><p class="text-center"> <br>MECANIX AUTOMOTRIZ</br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"> <br>Integración Web Directa </br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"><img src="images/2.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover" 
+              title="En Proceso de Evaluación"
+              data-content="Actualmente se está desarrollando la solución mediante Integración Web Directa"/><img src="images/auto3.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="Concesionario no Integrado" data-content="El Concesionario aún no está en proceso de Integración" data-original-title="  "></p></td> 
+		 <td class="col-xs-6"><p class="text-center"> 
+		
+		 <div class="alert alert-warning" role="alert"> 
+		 <table> 
+        <table width="90%" align="center" >
+		
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía solicitud de Integración <br><i>13/04/2016 16:20</i></br>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se analiza solución mediante Integración Web Directa <i></i> </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Análisis de implementación mediante Integración Web Directa  <i></i> </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		  
+		  <td class="col-xs-1"><p class="text-center"> <br> 13/04/2016 </br> 16:20 </p></td> 
+		  <td class="col-xs-1"><p class="text-center"><a href="https://clasificados.plan.io/issues/1058" /> <br>#1058</br> </p></td> 
+	      <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		
+		<tr class="warning">
+           <td class="col-xs-1"><p class="text-center"> <br>CALDO Y SANTI</br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"> <br>Integración Web Directa </br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"><img src="images/2.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover" 
+              title="En Proceso de Evaluación"
+              data-content="Actualmente se está desarrollando la solución mediante Integración Web Directa"/><img src="images/auto3.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="Concesionario no Integrado" data-content="El Concesionario aún no está en proceso de Integración" data-original-title="  "></p></td> 
+		 <td class="col-xs-6"><p class="text-center"> 
+		
+		 <div class="alert alert-warning" role="alert"> 
+		 <table> 
+        <table width="90%" align="center" >
+		
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía solicitud de Integración <br><i>07/04/2016 16:45</i></br>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se analiza solución mediante Integración Web Directa <i>08/04/2016 10:00</i> </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Análisis de implementación mediante Integración Web Directa  <i></i> </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		  
+		  <td class="col-xs-1"><p class="text-center"> <br> 07/04/2016 </br> 16:45 </p></td> 
+		  <td class="col-xs-1"><p class="text-center"><a href="https://clasificados.plan.io/issues/1026" /> <br>#1026</br> </p></td> 
+	      <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		<tr class="warning">
+           <td class="col-xs-1"><p class="text-center"> <br>TERRACAR</br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"> <br>Integración Web Directa </br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"><img src="images/2.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover" 
+              title="En Proceso de Evaluación"
+              data-content="Actualmente se está desarrollando la solución mediante Integración Web Directa"/><img src="images/auto3.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="Concesionario no Integrado" data-content="El Concesionario aún no está en proceso de Integración" data-original-title="  "></p></td> 
+		 <td class="col-xs-6"><p class="text-center"> 
+		
+		 <div class="alert alert-warning" role="alert"> 
+		 <table> 
+        <table width="90%" align="center" >
+		
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía solicitud de Integración <br><i>11/02/2016 12:00</i></br>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se analiza solución mediante Integración Web Directa <i>24/02/2016 09:30</i> </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Análisis de implementación mediante Integración Web Directa  <i></i> </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		  
+		  <td class="col-xs-1"><p class="text-center"> <br> 11/02/2016 </br> 12:00 </p></td> 
+		  <td class="col-xs-1"><p class="text-center"><a href="https://clasificados.plan.io/issues/886" /> <br>#886</br> </p></td> 
+	      <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		<tr class="warning">
+           <td class="col-xs-1"><p class="text-center"> <br>COQUELET CAMIONES</br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"> <br>Integración Web Directa </br> </p></td>
+	       <td class="col-xs-1"><p class="text-center"><img src="images/2.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover" 
+            title="En Proceso de Evaluación"
+            data-content="Actualmente se está desarrollando la solución mediante Integración Web Directa"/><img src="images/auto3.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="Concesionario no Integrado" data-content="El Concesionario aún no está en proceso de Integración" data-original-title="  "></p></td>  
+		   <td class="col-xs-6"><p class="text-center"> 
+		
+		   <div class="alert alert-warning" role="alert"> 
+		   <table> 
+           <table width="90%" align="center" >
+		
+			
+		<tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía solicitud de Integración <br><i>22/02/2016 12:00</i></br>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se analiza solución mediante Integración Web Directa <i>14/03/2016 09:30</i> </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Análisis de implementación mediante Integración Web Directa  <i></i> </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		
+		  <td class="col-xs-1"><p class="text-center"> <br> 22/02/2016 </br> 12:00 </p></td> 
+		  <td class="col-xs-1"><p class="text-center"><a href="https://clasificados.plan.io/issues/901" /> <br>#901</br> </p></td> 
+	      <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br>  </p></td>
+		 
+			
+		</tr>
+		
+		
+		
+			 
+		
+		<!--	 
+		<tr class="warning">
+        <td class="col-xs-1"><p class="text-center"> <br>PIRETTA</br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"> <br>Integración Web Directa </br> </p></td>
+	    <td class="col-xs-1"><p class="text-center"><img src="images/2.png" width="35px" height="35px"  data-toggle="popover" data-trigger="hover" 
+              title="En Proceso de Evaluación"
+              data-content="Actualmente se está desarrollando la solución mediante Integración Web Directa"/><img src="images/auto3.png" width="35" height="35" data-toggle="popover" data-trigger="hover" title="Concesionario no Integrado" data-content="El Concesionario aún no está en proceso de Integración" data-original-title="  "></p></td> 
+		<td class="col-xs-6"><p class="text-center"> 
+		 <div class="alert alert-warning" role="alert"> 
+		   <table> 
+           <table width="90%" align="center" >
+		
+			
+		  <tr style= "border-bottom">
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Negocios" ><b>1. AN: </b>Envía solicitud de Integración <br><i>14/03/2016 15:20</i></br>   </small> </td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Área de Ingeniería" ><b>1. AI: </b>Se analiza solución mediante Integración Web Directa <i>15/03/2016 12:00</i> </small></td></p>
+		<td class="col-xs-1" align="left"  ><small><p title="Estado Actual Concesionario" ><b> 1. EA: </b>Análisis de implementación mediante Integración Web Directa  <i></i> </small></td></p>
+		</tr>
+		
+		</table>  </div>  </p></td>
+		 
+		  <td class="col-xs-1"><p class="text-center"> <br> 14/03/2016 </br> 15:20 </p></td> 
+		  <td class="col-xs-1"><p class="text-center"><a href="https://clasificados.plan.io/issues/950" /> <br>#950</br> </p></td> 
+	      <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br> </p></td>
+		  <td class="col-xs-1"><p class="text-center"> <br>Por Definir</br>  </p></td>
+		 
+			
+		</tr>	 
+			 
+			--> 
+		
+			 
+			
+		
+		
+		
+			 
+
+          </tbody>
+          </div>
+      </table>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
+</body>
+</html>
